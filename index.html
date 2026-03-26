@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title">Escola Bíblica</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --a:#f0c060;--ar:240,192,96;--a-bg:#f0c060;
+  --bg:#080808;--bg2:#0f0f0f;--card:#111;--card2:#161616;
+  --b:rgba(255,255,255,.08);--b2:rgba(255,255,255,.14);
+  --t:#fff;--t2:rgba(255,255,255,.58);--t3:rgba(255,255,255,.28);
+  --font:'SFNS Display','SF Pro Display','SF Pro Text',-apple-system,'Inter',sans-serif;
+  --r:16px;--rs:10px;--rx:8px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--t);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:5px}
+img{display:block;max-width:100%}a{text-decoration:none;color:inherit}
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:200;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 6%;transition:all .4s}
+.nav.solid{background:rgba(8,8,8,.94);backdrop-filter:blur(24px) saturate(180%);border-bottom:1px solid var(--b)}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo-box{width:36px;height:36px;border-radius:9px;background:var(--a-bg);display:flex;align-items:center;justify-content:center}
+.nav-logo-box svg{width:18px;height:18px}
+.nav-logo-img{max-height:44px;max-width:200px;object-fit:contain}
+.nav-brand{font-size:15px;font-weight:700;letter-spacing:-.02em;color:#fff;line-height:1.15}
+.nav-brand span{font-size:9px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--t3);display:block}
+.nav-links{display:flex;gap:28px}
+.nav-link{font-size:13px;font-weight:500;color:var(--t2);transition:color .2s}
+.nav-link:hover{color:#fff}
+.nav-cta{font-size:13px;font-weight:600;color:#000;background:var(--a-bg);padding:10px 22px;border-radius:var(--rx);transition:all .2s;box-shadow:0 4px 18px rgba(var(--ar),.3)}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(var(--ar),.45)}
+/* HERO */
+.hero{position:relative;width:100%;height:100vh;min-height:600px;overflow:hidden;background:var(--bg)}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1s cubic-bezier(.4,0,.2,1);z-index:0}
+.slide.on{opacity:1;z-index:1}
+.slide img{width:100%;height:100%;object-fit:cover;object-position:center top;animation:kb 18s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.06)}}
+.slide-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;background:linear-gradient(160deg,#0d0d0d,rgba(var(--ar),.04))}
+.slide-ph span{font-size:64px;opacity:.12}
+.slide-ph small{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--t3)}
+.hero-gt{position:absolute;top:0;left:0;right:0;height:180px;z-index:2;pointer-events:none;background:linear-gradient(to bottom,rgba(8,8,8,.65),transparent)}
+.hero-gl{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(to right,rgba(8,8,8,.93) 0%,rgba(8,8,8,.78) 38%,rgba(8,8,8,.35) 62%,rgba(8,8,8,.06) 80%,transparent 100%)}
+.hero-gb{position:absolute;bottom:0;left:0;right:0;height:300px;z-index:2;pointer-events:none;background:linear-gradient(to top,var(--bg) 0%,rgba(8,8,8,.72) 45%,transparent 100%)}
+.hero-content{position:absolute;bottom:0;left:0;right:0;z-index:3;padding:0 6% 8%;max-width:700px;animation:hIn .9s cubic-bezier(.16,1,.3,1) .15s both}
+@keyframes hIn{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+.hero-pill{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:500;border:1px solid var(--b2);background:rgba(255,255,255,.07);padding:6px 14px;border-radius:40px;color:var(--t2);margin-bottom:22px;backdrop-filter:blur(8px)}
+.pill-dot{width:7px;height:7px;border-radius:50%;background:var(--a);box-shadow:0 0 8px rgba(var(--ar),.9);animation:dp 2s ease-in-out infinite;flex-shrink:0}
+@keyframes dp{0%,100%{opacity:1}50%{opacity:.3}}
+.hero-h1{font-size:clamp(38px,5.5vw,74px);font-weight:800;line-height:1.06;letter-spacing:-.04em;color:#fff;margin-bottom:18px;text-shadow:0 2px 32px rgba(0,0,0,.5)}
+.hero-h1 em{font-style:normal;background:var(--a-bg);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-p{font-size:17px;font-weight:400;line-height:1.72;color:var(--t2);margin-bottom:32px;max-width:520px;letter-spacing:-.01em}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px}
+.btn-p{display:inline-flex;align-items:center;gap:8px;font-family:var(--font);font-size:14px;font-weight:600;letter-spacing:-.01em;color:#000;background:var(--a-bg);padding:13px 28px;border-radius:var(--rs);transition:all .25s;box-shadow:0 4px 22px rgba(var(--ar),.35)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(var(--ar),.5)}
+.btn-s{display:inline-flex;align-items:center;font-family:var(--font);font-size:14px;font-weight:500;letter-spacing:-.01em;color:var(--t2);padding:13px 26px;border-radius:var(--rs);border:1px solid var(--b2);background:rgba(255,255,255,.06);backdrop-filter:blur(8px);transition:all .25s}
+.btn-s:hover{color:#fff;border-color:rgba(255,255,255,.28)}
+.hero-tags{display:flex;gap:20px;flex-wrap:wrap}
+.h-tag{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--t3)}
+.h-tag svg{width:13px;height:13px;opacity:.4}
+.s-ctrl{position:absolute;bottom:0;right:6%;z-index:4;display:flex;align-items:center;gap:10px;padding-bottom:8%}
+.s-dots{display:flex;gap:5px;align-items:center}
+.s-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:all .35s}
+.s-dot.on{background:var(--a);width:18px;border-radius:3px}
+.s-counter{font-size:10px;font-weight:600;letter-spacing:.06em;color:rgba(255,255,255,.4);background:rgba(0,0,0,.4);backdrop-filter:blur(8px);padding:4px 10px;border-radius:20px}
+.s-prog{position:absolute;bottom:0;left:0;right:0;height:2px;z-index:4;background:rgba(255,255,255,.08)}
+.s-bar{height:100%;background:var(--a-bg);border-radius:1px;animation:prog 15s linear infinite}
+@keyframes prog{from{width:0}to{width:100%}}
+/* DIVIDER */
+.divider{height:1px;background:linear-gradient(to right,transparent,var(--b2),transparent);margin:0 6%}
+/* SECTIONS */
+.sec{padding:80px 6%}
+.sec-alt{background:var(--bg2)}
+.sec-top{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:36px}
+.sec-eye{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--a);opacity:.8;margin-bottom:7px}
+.sec-h2{font-size:clamp(22px,2.8vw,32px);font-weight:800;letter-spacing:-.03em;color:#fff}
+.see-all{font-size:13px;font-weight:500;color:var(--t3);display:flex;align-items:center;gap:4px;border-bottom:1px solid transparent;padding-bottom:1px;transition:all .2s;white-space:nowrap}
+.see-all:hover{color:var(--a);border-color:var(--a)}
+/* GRID */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+@media(max-width:1200px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}}
+/* CARD */
+.card{display:flex;flex-direction:column;border-radius:var(--r);overflow:hidden;background:var(--card);border:1px solid var(--b);transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s,border-color .3s;cursor:pointer}
+.card:hover{transform:translateY(-6px);box-shadow:0 28px 60px rgba(0,0,0,.7),0 0 0 1px rgba(var(--ar),.18);border-color:rgba(var(--ar),.18)}
+/* Normal: 1080×1350 = 4:5 */
+.c-thumb{width:100%;aspect-ratio:4/5;position:relative;overflow:hidden;background:var(--card2);flex-shrink:0}
+/* Ebook: 320×420 */
+.c-thumb.ebook{aspect-ratio:320/420}
+.c-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.16,1,.3,1)}
+.card:hover .c-thumb img{transform:scale(1.06)}
+.c-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:linear-gradient(160deg,var(--card2),rgba(var(--ar),.04))}
+.c-ph span{font-size:36px;opacity:.14}
+.c-ph small{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--t3)}
+.c-badge{position:absolute;top:10px;left:10px;z-index:2;font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:4px 9px;border-radius:6px;backdrop-filter:blur(8px)}
+.bn{background:rgba(52,211,153,.15);border:1px solid rgba(52,211,153,.3);color:#34d399}
+.bh{background:rgba(248,113,113,.15);border:1px solid rgba(248,113,113,.3);color:#f87171}
+.bf{background:rgba(var(--ar),.15);border:1px solid rgba(var(--ar),.3);color:var(--a)}
+.c-body{padding:14px 14px 16px;display:flex;flex-direction:column;flex:1}
+.c-cat{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--a);opacity:.8;margin-bottom:5px}
+.c-name{font-size:14px;font-weight:700;letter-spacing:-.02em;color:#fff;line-height:1.35;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.c-prices{display:flex;align-items:flex-end;gap:6px;margin-bottom:12px}
+.c-old{font-size:11px;color:var(--t3);text-decoration:line-through;line-height:1.8}
+.c-price{font-size:20px;font-weight:800;letter-spacing:-.03em;color:var(--a);line-height:1}
+.c-buy{display:flex;align-items:center;justify-content:center;gap:7px;font-family:var(--font);font-size:13px;font-weight:600;letter-spacing:-.01em;color:#000;background:var(--a-bg);border:none;border-radius:var(--rx);padding:11px 16px;cursor:pointer;text-decoration:none;transition:all .25s;box-shadow:0 2px 14px rgba(var(--ar),.22);margin-top:auto}
+.c-buy:hover{filter:brightness(1.1);transform:translateY(-1px);box-shadow:0 6px 22px rgba(var(--ar),.4)}
+.c-buy svg{width:14px;height:14px;flex-shrink:0}
+.empty{grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--t3);font-size:14px}
+/* FOOTER */
+.footer{background:#050505;border-top:1px solid var(--b);padding:60px 6% 32px}
+.f-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:48px}
+@media(max-width:700px){.f-grid{grid-template-columns:1fr 1fr}}
+.f-name{font-size:16px;font-weight:800;letter-spacing:-.02em;color:var(--a);margin-bottom:10px}
+.f-desc{font-size:13px;line-height:1.85;color:var(--t3);max-width:240px}
+.f-ch{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--t3);margin-bottom:14px}
+.f-col ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.f-col a{font-size:13px;color:var(--t3);transition:color .2s}
+.f-col a:hover{color:var(--a)}
+.f-bot{border-top:1px solid var(--b);padding-top:20px;display:flex;justify-content:space-between;align-items:center}
+.f-copy{font-size:11px;color:var(--t3)}
+.f-motto{font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--t3);opacity:.5}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.rv.in{opacity:1;transform:none}
+@media(max-width:768px){.nav-links,.nav-cta{display:none}.hero-h1{font-size:clamp(32px,8vw,56px)}.hero-content{padding:0 5% 14%}}
+</style>
+</head>
+<body>
+<nav class="nav" id="nav">
+  <div class="nav-logo">
+    <img class="nav-logo-img" id="v-logo-img" src="" alt="logo" style="display:none">
+    <div id="v-logo-text" style="display:flex;align-items:center;gap:10px">
+      <div class="nav-logo-box"><svg viewBox="0 0 18 18" fill="none"><path d="M9 2v14M4.5 6.5h9M2 9h14" stroke="#000" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+      <div><div class="nav-brand" id="v-name">Escola Bíblica</div><span id="v-slogan">Centro de Estudos</span></div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="#sections" class="nav-link">Cursos</a>
+    <a href="#footer" class="nav-link">Sobre</a>
+    <a href="#footer" class="nav-link">Contato</a>
+  </div>
+  <a href="#sections" class="nav-cta">Ver Cursos</a>
+</nav>
+
+<div class="hero" id="hero">
+  <div id="slides-container"></div>
+  <div class="hero-gt"></div><div class="hero-gl"></div><div class="hero-gb" id="hero-gb"></div>
+  <div class="hero-content">
+    <div class="hero-pill"><span class="pill-dot"></span><span id="v-eyebrow">Centro de Estudos Bíblicos</span></div>
+    <h1 class="hero-h1" id="v-title">Conheça a <em>Palavra</em> com profundidade.</h1>
+    <p class="hero-p" id="v-sub">Cursos completos em Teologia, Hermenêutica, Grego Bíblico, Hebraico, e muito mais.</p>
+    <div class="hero-btns">
+      <a href="#sections" class="btn-p" id="v-btn1">Explorar Cursos <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 7h8M8 4l3 3-3 3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="#sections" class="btn-s" id="v-btn2">Ver Áreas</a>
+    </div>
+    <div class="hero-tags">
+      <span class="h-tag"><svg viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="6.5" cy="6.5" r="4.5"/><path d="M4.5 6.5l1.5 1.5L9 5" stroke-linecap="round" stroke-linejoin="round"/></svg>Online</span>
+      <span class="h-tag"><svg viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="1.5" y="2.5" width="10" height="8" rx="1.2"/></svg>Seu ritmo</span>
+      <span class="h-tag"><svg viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6.5 1.5l1.2 2.5 2.8.4-2 2 .5 2.8L6.5 8l-2.5 1.2.5-2.8-2-2 2.8-.4z"/></svg>Certificado</span>
+    </div>
+  </div>
+  <div class="s-ctrl" id="s-ctrl"><div class="s-dots" id="s-dots"></div><div class="s-counter" id="s-counter">1 / 1</div></div>
+  <div class="s-prog"><div class="s-bar" id="s-bar"></div></div>
+</div>
+
+<div class="divider"></div>
+<div id="sections" style="scroll-margin-top:72px"></div>
+
+<footer class="footer" id="footer">
+  <div class="f-grid">
+    <div><div class="f-name" id="v-fname">Escola Bíblica</div><div class="f-desc" id="v-fdesc">Formando estudantes comprometidos com a Palavra de Deus.</div></div>
+    <div class="f-col"><div class="f-ch">Cursos</div><ul><li><a href="#">Teologia</a></li><li><a href="#">Hermenêutica</a></li><li><a href="#">Grego Bíblico</a></li></ul></div>
+    <div class="f-col"><div class="f-ch">Suporte</div><ul><li><a href="#">Contato</a></li><li><a href="#">FAQ</a></li><li><a href="#">WhatsApp</a></li></ul></div>
+  </div>
+  <div class="f-bot"><div class="f-copy" id="v-copy">© 2025 Escola Bíblica.</div><div class="f-motto" id="v-motto">Soli Deo Gloria</div></div>
+</footer>
+
+<script>
+// ── DATA SOURCES ──
+// 1. Tries to fetch data.json from the same server (GitHub Pages)
+// 2. Falls back to localStorage (for local preview with admin)
+const SK='escola_config_v2',CK='escola_courses_v2',HK='escola_hero_imgs_v1',CATK='escola_cats_v1';
+const txt=(id,v)=>{const e=document.getElementById(id);if(e&&v!=null)e.textContent=v};
+let slideIdx=0,slideTimer=null;
+
+// ── LOAD DATA ──
+async function loadData(){
+  // Try fetching published data.json first
+  try{
+    const r=await fetch('./data.json?t='+Date.now(),{cache:'no-store'});
+    if(r.ok){
+      const d=await r.json();
+      if(d && d.config){
+        return {
+          s: d.config||{},
+          c: d.courses||[],
+          h: d.heroImgs||[],
+          cats: d.cats||[]
+        };
+      }
+    }
+  }catch(e){}
+  // Fallback: localStorage (local admin preview)
+  return {
+    s: (()=>{try{return JSON.parse(localStorage.getItem(SK)||'{}')}catch{return{}}})(),
+    c: (()=>{try{return JSON.parse(localStorage.getItem(CK)||'[]')}catch{return[]}})(),
+    h: (()=>{try{return JSON.parse(localStorage.getItem(HK)||'[]')}catch{return[]}})(),
+    cats: (()=>{try{return JSON.parse(localStorage.getItem(CATK)||'[]')}catch{return[]}})()
+  };
+}
+
+// ── SLIDESHOW ──
+function buildSlides(hi,cv){
+  const imgs=hi.length?hi.map(h=>({src:h.src,name:h.name})):cv.filter(c=>c.cover).map(c=>({src:c.cover,name:c.name}));
+  const wrap=document.getElementById('slides-container'),dots=document.getElementById('s-dots'),cnt=document.getElementById('s-counter'),bar=document.getElementById('s-bar');
+  wrap.innerHTML='';dots.innerHTML='';clearInterval(slideTimer);slideIdx=0;
+  if(!imgs.length){wrap.innerHTML='<div class="slide on"><div class="slide-ph"><span>📖</span><small>Adicione imagens no admin</small></div></div>';cnt.textContent='1 / 1';document.getElementById('s-ctrl').style.display='none';return}
+  document.getElementById('s-ctrl').style.display='flex';
+  imgs.forEach((img,i)=>{
+    const s=document.createElement('div');s.className='slide'+(i===0?' on':'');
+    s.innerHTML=`<img src="${img.src}" alt="${img.name||''}" loading="${i===0?'eager':'lazy'}">`;wrap.appendChild(s);
+    if(imgs.length>1){const d=document.createElement('div');d.className='s-dot'+(i===0?' on':'');d.onclick=()=>goSlide(i);dots.appendChild(d)}
+  });
+  cnt.textContent=`1 / ${imgs.length}`;dots.style.display=imgs.length<2?'none':'flex';
+  if(imgs.length>1)slideTimer=setInterval(()=>{const a=wrap.querySelectorAll('.slide');goSlide((slideIdx+1)%a.length)},15000);
+  bar.style.animation='none';bar.offsetHeight;bar.style.animation='';
+}
+function goSlide(i){
+  const a=document.getElementById('slides-container').querySelectorAll('.slide'),d=document.querySelectorAll('.s-dot');
+  a.forEach((s,j)=>s.classList.toggle('on',j===i));d.forEach((x,j)=>x.classList.toggle('on',j===i));
+  slideIdx=i;document.getElementById('s-counter').textContent=`${i+1} / ${a.length}`;
+  const b=document.getElementById('s-bar');b.style.animation='none';b.offsetHeight;b.style.animation='';
+}
+
+// ── CARDS ──
+const bm={new:'bn',hot:'bh',free:'bf'},bl={new:'Novo',hot:'🔥 Popular',free:'Gratuito'};
+function card(c,isEbook){
+  return`<div class="card" onclick="location.href='${c.link||'#'}'">
+    <div class="c-thumb${isEbook?' ebook':''}">
+      ${c.cover?`<img src="${c.cover}" alt="${c.name}" loading="lazy">`:`<div class="c-ph"><span>📚</span><small>${c.cat||''}</small></div>`}
+      ${c.badge&&bm[c.badge]?`<span class="c-badge ${bm[c.badge]}">${bl[c.badge]}</span>`:''}
+    </div>
+    <div class="c-body">
+      <div class="c-cat">${c.cat||''}</div>
+      <div class="c-name">${c.name||''}</div>
+      <div class="c-prices">${c.oldPrice?`<span class="c-old">${c.oldPrice}</span>`:''}<span class="c-price">${c.price||'—'}</span></div>
+      <a class="c-buy" href="${c.link||'#'}" ${c.link&&c.link!=='#'?'target="_blank" rel="noopener"':''} onclick="event.stopPropagation()">
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="5.5" cy="11.5" r="1"/><circle cx="10.5" cy="11.5" r="1"/><path d="M1 1h1.5l2 7h6l1.5-5H4" stroke-linecap="round" stroke-linejoin="round"/></svg>Comprar agora
+      </a>
+    </div>
+  </div>`;
+}
+
+// ── SECTIONS ──
+function renderSections(courses,cats){
+  const container=document.getElementById('sections');
+  const vis=cats.filter(c=>c.visible).sort((a,b)=>a.order-b.order);
+  let html='';
+  if(!vis.length){
+    const cc=courses.length?courses.map(c=>card(c,false)).join(''):'<div class="empty">Nenhum curso ainda.</div>';
+    html=`<section class="sec rv"><div class="sec-top"><div><div class="sec-eye">Grade Completa</div><div class="sec-h2">Todos os Cursos</div></div><a href="#" class="see-all">Ver todos →</a></div><div class="grid">${cc}</div></section>`;
+  } else {
+    vis.forEach((cat,i)=>{
+      const cc=courses.filter(c=>c.cat===cat.name);
+      if(!cc.length)return;
+      const alt=i%2===1?' sec-alt':'',eb=cat.type==='ebook';
+      html+=`<section class="sec${alt} rv"><div class="sec-top"><div><div class="sec-eye">${cat.name}</div><div class="sec-h2">${cat.name}</div></div><a href="#" class="see-all">Ver todos →</a></div><div class="grid">${cc.map(c=>card(c,eb)).join('')}</div></section>`;
+    });
+    if(!html)html='<div style="padding:80px 6%;color:var(--t3);font-size:14px">Nenhum curso cadastrado ainda.</div>';
+  }
+  container.innerHTML=html;
+  document.querySelectorAll('.rv:not(.in)').forEach(el=>obs.observe(el));
+}
+
+// ── APPLY ──
+function applyState(data){
+  const {s,c,h,cats} = data;
+  const r=document.documentElement.style;
+  if(s.accent){const g=s.accent.includes('gradient');r.setProperty('--a-bg',s.accent);const sol=g?(s.accent.match(/#[0-9a-fA-F]{6}/)||[])[0]||'#f0c060':s.accent;r.setProperty('--a',sol);r.setProperty('--ar',hexRgb(sol))}
+  if(s.bg){const g=s.bg.includes('gradient');if(g){document.body.style.background=s.bg;const sol=(s.bg.match(/#[0-9a-fA-F]{6}/)||[])[0]||'#080808';r.setProperty('--bg',sol);r.setProperty('--bg2',lx(sol,.08));r.setProperty('--card',lx(sol,.12));r.setProperty('--card2',lx(sol,.18));document.getElementById('hero-gb').style.background=`linear-gradient(to top,${sol} 0%,rgba(0,0,0,.72) 45%,transparent 100%)`}else{document.body.style.background='';r.setProperty('--bg',s.bg);r.setProperty('--bg2',lx(s.bg,.08));r.setProperty('--card',lx(s.bg,.12));r.setProperty('--card2',lx(s.bg,.18));document.getElementById('hero-gb').style.background=''}}
+  if(s.font){r.setProperty('--font',s.font);document.body.style.fontFamily=s.font}
+  txt('page-title',s.name||'Escola Bíblica');txt('v-name',s.name||'Escola Bíblica');txt('v-slogan',s.slogan||'');
+  txt('v-eyebrow',s.eyebrow||'');txt('v-sub',s.subtitle||'');txt('v-btn1',s.btn1||'Explorar Cursos');txt('v-btn2',s.btn2||'Ver Áreas');
+  txt('v-fname',s.name||'Escola Bíblica');txt('v-fdesc',s.footerDesc||'');txt('v-copy',s.copy||'');txt('v-motto',s.motto||'');
+  const li=document.getElementById('v-logo-img'),lt=document.getElementById('v-logo-text');
+  if(s.logo){li.src=s.logo;li.style.display='block';lt.style.display='none'}else{li.style.display='none';lt.style.display='flex'}
+  const tEl=document.getElementById('v-title'),title=s.title||'',em=s.titleEm||'';
+  if(em&&title.includes(em))tEl.innerHTML=title.replace(em,`<em>${em}</em>`);else tEl.textContent=title;
+  if(s.heroSize)tEl.style.fontSize=s.heroSize+'px';
+  const b2=document.getElementById('v-btn2');
+  if(s.btn2Link&&s.btn2Link.trim()){b2.href=s.btn2Link.trim();b2.target='_blank';b2.rel='noopener'}else{b2.href='#sections';b2.removeAttribute('target');b2.removeAttribute('rel')}
+  buildSlides(h,c);
+  renderSections(c,cats);
+}
+
+function hexRgb(h){const r=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(h);return r?`${parseInt(r[1],16)},${parseInt(r[2],16)},${parseInt(r[3],16)}`:'240,192,96'}
+function lx(h,p){const r=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(h);if(!r)return h;const f=v=>Math.min(255,Math.round(parseInt(v,16)+(255-parseInt(v,16))*p));return`#${[r[1],r[2],r[3]].map(f).map(v=>v.toString(16).padStart(2,'0')).join('')}`}
+
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('solid',scrollY>60),{passive:true});
+const obs=new IntersectionObserver(entries=>entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in'),i*80);obs.unobserve(e.target)}}),{threshold:.07});
+
+// Sync from localStorage when admin is open on same device
+window.addEventListener('storage',e=>{
+  if([SK,CK,HK,CATK].includes(e.key)){
+    loadData().then(applyState);
+  }
+});
+
+// Init: load from data.json (or localStorage fallback)
+loadData().then(applyState);
+</script>
+</body>
+</html>
