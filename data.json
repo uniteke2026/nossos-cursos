@@ -128,17 +128,6 @@
       "cover": "https://raw.githubusercontent.com/uniteke2026/nossos-cursos/main/assets/covers/1774557532178.jpg"
     },
     {
-      "id": 1774557652720,
-      "name": "Psicologia Pastoral",
-      "cat": "Classe EAD",
-      "desc": "",
-      "price": "R$ 197,00",
-      "oldPrice": "R$ 497,90",
-      "badge": "",
-      "link": "#",
-      "cover": "https://raw.githubusercontent.com/uniteke2026/nossos-cursos/main/assets/covers/1774557652720.jpg"
-    },
-    {
       "id": 1774557790584,
       "name": "Especialização no Livro de Rute",
       "cat": "Classe EAD",
@@ -148,28 +137,6 @@
       "badge": "",
       "link": "#",
       "cover": "https://raw.githubusercontent.com/uniteke2026/nossos-cursos/main/assets/covers/1774557790584.png"
-    },
-    {
-      "id": 1774557826427,
-      "name": "Provérbios para Pregadores - Vol 1",
-      "cat": "Classe EAD",
-      "desc": "",
-      "price": "R$ 197,00",
-      "oldPrice": "R$ 497,90",
-      "badge": "",
-      "link": "#",
-      "cover": "https://raw.githubusercontent.com/uniteke2026/nossos-cursos/main/assets/covers/1774557826427.jpg"
-    },
-    {
-      "id": 1774557892268,
-      "name": "Provérbios para Pregadores - Vol 2",
-      "cat": "Classe EAD",
-      "desc": "",
-      "price": "R$ 197,00",
-      "oldPrice": "R$ 497,90",
-      "badge": "",
-      "link": "#",
-      "cover": "https://raw.githubusercontent.com/uniteke2026/nossos-cursos/main/assets/covers/1774557892268.png"
     },
     {
       "name": "DEUS INQUESTIONÁVEL",
@@ -305,5 +272,5 @@
       "linkTarget": "_blank"
     }
   ],
-  "publishedAt": "2026-03-27T04:41:11.136Z"
+  "publishedAt": "2026-03-27T04:42:30.544Z"
 }
