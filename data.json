@@ -262,7 +262,7 @@
     {
       "id": 1774554539561,
       "name": "Sermões Expositivos",
-      "visible": true,
+      "visible": false,
       "order": 4,
       "type": "normal"
     },
@@ -283,8 +283,15 @@
     {
       "id": 3,
       "name": "Línguas Bíblicas",
-      "visible": true,
+      "visible": false,
       "order": 7,
+      "type": "normal"
+    },
+    {
+      "id": 1774586413133,
+      "name": "Novidades",
+      "visible": true,
+      "order": 8,
       "type": "normal"
     }
   ],
@@ -298,5 +305,5 @@
       "linkTarget": "_blank"
     }
   ],
-  "publishedAt": "2026-03-27T04:36:23.356Z"
+  "publishedAt": "2026-03-27T04:41:11.136Z"
 }
