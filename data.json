@@ -130,13 +130,16 @@
     {
       "id": 1774557790584,
       "name": "Especialização no Livro de Rute",
-      "cat": "Classe EAD",
+      "cat": "Novidades",
       "desc": "",
       "price": "R$ 197,00",
       "oldPrice": "R$ 497,90",
       "badge": "",
       "link": "#",
-      "cover": "https://raw.githubusercontent.com/uniteke2026/nossos-cursos/main/assets/covers/1774557790584.png"
+      "cover": "https://raw.githubusercontent.com/uniteke2026/nossos-cursos/main/assets/covers/1774557790584.png",
+      "descLong": "",
+      "topics": [],
+      "modules": []
     },
     {
       "name": "DEUS INQUESTIONÁVEL",
@@ -206,58 +209,58 @@
       "type": "normal"
     },
     {
+      "id": 1774586413133,
+      "name": "Novidades",
+      "visible": true,
+      "order": 1,
+      "type": "normal"
+    },
+    {
       "id": 1774557621090,
       "name": "Classe EAD",
       "visible": true,
-      "order": 1,
+      "order": 2,
       "type": "normal"
     },
     {
       "id": 4,
       "name": "Ebooks",
       "visible": true,
-      "order": 2,
+      "order": 3,
       "type": "ebook"
     },
     {
       "id": 1774556113694,
       "name": "Novo Testamento",
       "visible": true,
-      "order": 3,
+      "order": 4,
       "type": "normal"
     },
     {
       "id": 1774554539561,
       "name": "Sermões Expositivos",
       "visible": false,
-      "order": 4,
+      "order": 5,
       "type": "normal"
     },
     {
       "id": 1,
       "name": "Teologia",
       "visible": false,
-      "order": 5,
+      "order": 6,
       "type": "normal"
     },
     {
       "id": 2,
       "name": "Hermenêutica",
       "visible": false,
-      "order": 6,
+      "order": 7,
       "type": "normal"
     },
     {
       "id": 3,
       "name": "Línguas Bíblicas",
       "visible": false,
-      "order": 7,
-      "type": "normal"
-    },
-    {
-      "id": 1774586413133,
-      "name": "Novidades",
-      "visible": true,
       "order": 8,
       "type": "normal"
     }
@@ -272,5 +275,5 @@
       "linkTarget": "_blank"
     }
   ],
-  "publishedAt": "2026-03-27T04:42:30.544Z"
+  "publishedAt": "2026-03-27T04:44:20.225Z"
 }
