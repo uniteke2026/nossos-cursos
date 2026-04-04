@@ -9,10 +9,10 @@
     "ga4Id": "",
     "gadsId": "",
     "gadsLabel": "",
-    "siteUrl": "",
-    "ogTitle": "",
-    "ogDesc": "",
-    "ogImage": "",
+    "siteUrl": "https://kerigmaacademy.com.br/",
+    "ogTitle": "Conheça todos os nossos cursos",
+    "ogDesc": "Cursos completos em Pregações Expositivas, Hermenêutica, Grego Bíblico, Hebraico, e muito mais.",
+    "ogImage": "https://kerigmaacademy.com.br/assets/og-preview.jpg",
     "accent": "linear-gradient(135deg,#ffffff,#8d8fa0)",
     "bg": "linear-gradient(160deg,#080808,#212121)",
     "font": "'SFNS Display','SF Pro Display','SF Pro Text',-apple-system,'Inter',sans-serif",
@@ -465,5 +465,5 @@
       "linkTarget": "_blank"
     }
   ],
-  "publishedAt": "2026-04-04T03:20:58.341Z"
+  "publishedAt": "2026-04-04T03:24:50.373Z"
 }
