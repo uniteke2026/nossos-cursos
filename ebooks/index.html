@@ -380,7 +380,7 @@ body.has-promo .hero{margin-top:40px}
   </div>
 
   <div class="nav-actions" style="display:flex;align-items:center;gap:8px;flex-shrink:0">
-    <a href="/" class="btn-s" id="nav-ebooks-link" style="padding:9px 16px;font-size:12px">← Cursos</a>
+    <a href="/" class="btn-s" id="nav-ebooks-link" style="padding:9px 16px;font-size:12px">← Ebooks</a>
     <a href="#sections" class="nav-cta">Ver Ebooks</a>
   </div>
 </nav>
@@ -444,7 +444,7 @@ body.has-promo .hero{margin-top:40px}
       <div class="f-name" id="v-fname">Kerigma Academy</div>
       <div class="f-desc" id="v-fdesc">Formando estudantes comprometidos com a Palavra de Deus.</div>
     </div>
-    <div class="f-col"><div class="f-ch">Cursos</div><ul><li><a href="#">Teologia</a></li><li><a href="#">Hermenêutica</a></li><li><a href="#">Grego Bíblico</a></li><li><a href="#">Hebraico</a></li></ul></div>
+    <div class="f-col"><div class="f-ch">Ebooks</div><ul><li><a href="#">Teologia</a></li><li><a href="#">Hermenêutica</a></li><li><a href="#">Grego Bíblico</a></li><li><a href="#">Hebraico</a></li></ul></div>
     <div class="f-col"><div class="f-ch">Suporte</div><ul><li><a href="#">Contato</a></li><li><a href="#">FAQ</a></li><li><a href="#">WhatsApp</a></li></ul></div>
   </div>
   <div class="f-bot"><div class="f-copy" id="v-copy">© 2025 Kerigma Academy.</div><div class="f-motto" id="v-motto">Soli Deo Gloria</div></div>
@@ -588,7 +588,7 @@ function renderSections(courses,cats){
   let html='';
   if(!vis.length){
     const cc=courses.length?courses.map(c=>card(c,false)).join(''):'<div class="empty">Nenhum curso ainda.</div>';
-    html=`<section class="sec rv"><div class="sec-top"><div><div class="sec-eye">Grade Completa</div><div class="sec-h2">Todos os Cursos</div></div></div><div class="grid">${cc}</div></section>`;
+    html=`<section class="sec rv"><div class="sec-top"><div><div class="sec-eye">Grade Completa</div><div class="sec-h2">Todos os Ebooks</div></div></div><div class="grid">${cc}</div></section>`;
   } else {
     vis.forEach((cat,i)=>{
       const cc=courses.filter(c=>c.cat===cat.name);
@@ -652,7 +652,7 @@ function applyState(data){
 
   txt('v-name',s.name||'Kerigma Academy');txt('v-slogan',s.slogan||'');
   txt('v-eyebrow',s.eyebrow||'');txt('v-sub',s.subtitle||'');
-  txt('v-btn1',s.btn1||'Explorar Cursos');txt('v-btn2',s.btn2||'Ver Áreas');
+  txt('v-btn1',s.btn1||'Explorar Ebooks');txt('v-btn2',s.btn2||'Ver Áreas');
   txt('v-fname',s.name||'Kerigma Academy');txt('v-fdesc',s.footerDesc||'');
   txt('v-copy',s.copy||'');txt('v-motto',s.motto||'');
 
