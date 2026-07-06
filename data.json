@@ -396,6 +396,23 @@
       "descLong": "",
       "topics": [],
       "modules": []
+    },
+    {
+      "name": "Curso Básico | Cura & Libertação | Para Obreiros",
+      "cat": "Ebooks",
+      "desc": "",
+      "descLong": "",
+      "topics": [],
+      "modules": [],
+      "price": "11,90",
+      "oldPrice": "",
+      "badge": "",
+      "link": "https://pay.kiwify.com.br/ByIp2YK",
+      "cover": "https://raw.githubusercontent.com/uniteke2026/nossos-cursos/main/assets/covers/1783365498656.jpg",
+      "upsellEnabled": false,
+      "upsellTitle": "",
+      "upsellOffers": [],
+      "id": 1783365498656
     }
   ],
   "cats": [
@@ -474,5 +491,5 @@
     }
   ],
   "ebooksHeroImgs": [],
-  "publishedAt": "2026-07-06T19:13:22.646Z"
+  "publishedAt": "2026-07-06T19:18:23.245Z"
 }
